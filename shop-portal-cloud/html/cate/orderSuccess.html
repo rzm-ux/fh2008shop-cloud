@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>订单页</title>
+    <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../js/shop/css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="../../js/shop/css/pages-getOrderInfo.css" />
+</head>
+<body>
+<!--head-->
+<div class="top">
+    <div class="py-container">
+        <div class="shortcut">
+            <ul class="fl" id="userMember">
+
+            </ul>
+            <ul class="fr">
+                <li class="f-item">我的订单</li>
+                <li class="f-item space"></li>
+                <li class="f-item">我的品优购</li>
+                <li class="f-item space"></li>
+                <li class="f-item">品优购会员</li>
+                <li class="f-item space"></li>
+                <li class="f-item">企业采购</li>
+                <li class="f-item space"></li>
+                <li class="f-item">关注品优购</li>
+                <li class="f-item space"></li>
+                <li class="f-item">客户服务</li>
+                <li class="f-item space"></li>
+                <li class="f-item">网站导航</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cart py-container">
+    <!--logoArea-->
+    <div class="logoArea">
+        <div class="fl logo"><span class="title">订单页</span></div>
+        <div class="fr search">
+            <form class="sui-form form-inline">
+                <div class="input-append">
+                    <input type="text" type="text" class="input-error input-xxlarge" placeholder="品优购自营" />
+                    <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--主内容-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">订单列表</h3>
+                </div>
+                <div class="panel-body">
+                    <table id="Table" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>订单总价格</th>
+                            <th>订单中商品总数量</th>
+                            <th>订单状态</th>
+                            <th>订单创建时间</th>
+                            <th>订单收件人名字</th>
+                            <th>地址</th>
+                            <th>电话</th>
+                            <th>支付方式</th>
+                            <th>操作</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tfoot id="orderId">
+
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <a class="sui-btn  btn-xlarge" href="#" onclick="addOrder()">取消订单</a>
+        <a class="sui-btn btn-danger btn-xlarge" href="#" onclick="addOrder()">支付</a>
+    </div>
+</div>
+<!-- 底部栏位 -->
+<!--页面底部-->
+<div class="clearfix footer">
+    <div class="py-container">
+        <div class="footlink">
+            <div class="Mod-service">
+                <ul class="Mod-Service-list">
+                    <li class="grid-service-item intro  intro1">
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro2">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro  intro3">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro4">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro intro5">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix Mod-list">
+                <div class="yui3-g">
+                    <div class="yui3-u-1-6">
+                        <h4>购物指南</h4>
+                        <ul class="unstyled">
+                            <li>购物流程</li>
+                            <li>会员介绍</li>
+                            <li>生活旅行/团购</li>
+                            <li>常见问题</li>
+                            <li>购物指南</li>
+                        </ul>
+
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>配送方式</h4>
+                        <ul class="unstyled">
+                            <li>上门自提</li>
+                            <li>211限时达</li>
+                            <li>配送服务查询</li>
+                            <li>配送费收取标准</li>
+                            <li>海外配送</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>支付方式</h4>
+                        <ul class="unstyled">
+                            <li>货到付款</li>
+                            <li>在线支付</li>
+                            <li>分期付款</li>
+                            <li>邮局汇款</li>
+                            <li>公司转账</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>售后服务</h4>
+                        <ul class="unstyled">
+                            <li>售后政策</li>
+                            <li>价格保护</li>
+                            <li>退款说明</li>
+                            <li>返修/退换货</li>
+                            <li>取消订单</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>特色服务</h4>
+                        <ul class="unstyled">
+                            <li>夺宝岛</li>
+                            <li>DIY装机</li>
+                            <li>延保服务</li>
+                            <li>品优购E卡</li>
+                            <li>品优购通信</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                    </div>
+                </div>
+            </div>
+            <div class="Mod-copyright">
+                <ul class="helpLink">
+                    <li>关于我们<span class="space"></span></li>
+                    <li>联系我们<span class="space"></span></li>
+                    <li>关于我们<span class="space"></span></li>
+                    <li>商家入驻<span class="space"></span></li>
+                    <li>营销中心<span class="space"></span></li>
+                    <li>友情链接<span class="space"></span></li>
+                    <li>关于我们<span class="space"></span></li>
+                    <li>营销中心<span class="space"></span></li>
+                    <li>友情链接<span class="space"></span></li>
+                    <li>关于我们</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--页面底部END-->
+<script src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../../js/common/server_url.js"></script>
+<script>
+    $(function () {
+        initOrder();
+        findMember();
+        infoToken();
+    });
+
+    var x_token;
+    function infoToken() {
+        $.ajax({
+            type:"post",
+            url:server_url+"/tokens/InterceptorToken",
+            beforeSend:function (xhr) {
+                var v_toKen=$.cookie("toKen");
+                xhr.setRequestHeader("x-token",v_toKen);
+            },
+            success:function (res) {
+                if (res.code==200){
+                    x_token=res.data;
+                }
+            }
+        })
+    }
+
+    function findMember() {
+        $.ajax({
+            type:"get",
+            url:server_url+"/meber/findMember",
+            beforeSend:function (xhr) {
+                var v_toKen=$.cookie("toKen");
+                xhr.setRequestHeader("x-auth",v_toKen);
+            },
+            success:function (res) {
+                if (res.code==200){
+                    $("#userMember").append('<li class="f-item">品优购欢迎您</li><li class="f-item">'+res.data.nickName+'!&nbsp;&nbsp;&nbsp;</li><li class="f-item"><a href="#" onclick="findLogun()">注销&nbsp;&nbsp;&nbsp;</a></li >  <li class="f-item"><a href="update.html" onclick="updatePasswo()">修改密码&nbsp;&nbsp;&nbsp;</a></li><li class="f-item"><a href="cart-student.html" >购物车('+res.data.count+')&nbsp;&nbsp;&nbsp;</a></li>\n')
+                }else {
+                    $("#userMember").append('<li class="f-item">品优购欢迎您！</li><li class="f-item"><a href="list.html">请登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><li class="f-item"><a href="add.html">注册</a></li>\n')
+
+                }
+            }
+        })
+    }
+    //进行查询
+    function initOrder() {
+        $.ajax({
+            type:"get",
+            url:server_url+"/orders/queryOrder",
+            beforeSend:function (xhr) {
+                var v_toKen=$.cookie("toKen");
+                xhr.setRequestHeader("x-auth",v_toKen);
+            },
+            success:function (res) {
+                if (res.code==200){
+                    var v_order=res.data;
+                    console.log(v_order);
+                  var v_html=''
+
+                    for (let order of v_order) {
+                      var v_state=order.state;
+                      var v_stateTest="";
+                      var v_payType=order.payType;
+                      var v_payTypeText="";
+                      if (v_payType==1) {
+                          v_payTypeText = "微信支付"
+                      }
+                      if (v_state==0){
+                          v_stateTest="未支付"
+                      }
+                      if (v_state==10){
+                          v_stateTest="已支付"
+                      }
+                      if (v_state==40){
+                          v_stateTest="交易失败";
+                      }
+                        v_html+='    <tr>\n' +
+                            '                            <th>'+order.id+'</th>\n' +
+                            '                            <th>'+order.totalPrice+'</th>\n' +
+                            '                            <th>'+order.totalCount+'</th>\n' +
+                            '                            <th>'+v_stateTest+'</th>\n' +
+                            '                            <th>'+order.createTime+'</th>\n' +
+                            '                            <th>'+order.settlementName+'</th>\n' +
+                            '                            <th>'+order.settlementAddr+'</th>\n' +
+                            '                            <th>'+order.settlementPhone+'</th>\n' +
+                            '                            <th>'+v_payTypeText+'</th>\n' +
+                            '                            <th><a href="#" onclick="updateState(\''+order.id+'\')">取消订单</a></th>\n' +
+                            '                            <th><a href="#" onclick="paySuccess(\''+order.id+'\',\''+order.totalPrice+'\')" >支付</a></th>\n' +
+                            '                        </tr>'
+                    }
+                    if (v_html==null){
+
+                    }
+                    $("#orderId").html(v_html);
+                }
+            }
+        })
+    }
+    function paySuccess(id,totalPrice) {
+        $.ajax({
+            type:"post",
+            url:server_url+"/pays/payOrder",
+            data:{"id":id},
+            beforeSend:function (xhr) {
+                var v_toKen=$.cookie("toKen");
+                xhr.setRequestHeader("x-auth",v_toKen);
+            },
+            success:function (result) {
+                if (result.code==200){
+                    var v_toke=result.data;
+                    $.cookie("totalPrice",totalPrice);
+                    $("body").html(v_toke);
+
+                }
+            }
+        })
+    }
+    function updateState(id) {
+        $.ajax({
+            type:"post",
+            url:server_url+"/orders/cancel",
+            data:{"id":id},
+            beforeSend:function (xhr) {
+                var v_toKen=$.cookie("toKen");
+                xhr.setRequestHeader("x-auth",v_toKen);
+            },
+            success:function (result) {
+                if (result.code == 200){
+                    alert("取消订单成功!");
+                    initOrder();
+                }
+            }
+        })
+    }
+</script>
+
+
+
+</body>
+
+</html>

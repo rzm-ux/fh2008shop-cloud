@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/md5.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../../js/jquery-3.3.1.js"></script>
+<script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../../js/shop/js/pages/index.js"></script>
+<script type="text/javascript" src="../../js/common/server_url.js"></script>
+<h1 style="color: red">账号未激活，请进行点击链接：<a href="#" onclick="actvationError()">发送邮箱进行激活</a>后，登录</h1>
+<script>
+    function actvationError() {
+        var v_toKen=$.cookie("memberDate")
+        $.ajax({
+            type:"post",
+            contentType:"application/json",
+            data:v_toKen,
+            url:server_url+"meber/activationError",
+            success:function (res) {
+                if (res.code==200){
+                    console.log(res);
+                    location.href="mailSuccess.html";
+                }
+            }
+
+        })
+    }
+
+</script>
+</body>
+
+</html>

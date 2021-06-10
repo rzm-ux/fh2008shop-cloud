@@ -1,0 +1,15 @@
+
+server:
+  port: 8006
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:8000/eureka/,http://peer1:8001/eureka/,http://pee2:8002/eureka/
+spring:
+  application:
+    name: shop-cart-api #配置注册中心地址
+stock:
+  count:
+    limt: 10

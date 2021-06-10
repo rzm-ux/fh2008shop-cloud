@@ -1,0 +1,14 @@
+
+server:
+  port: 8002
+eureka:
+  instance:
+      hostname: peer2 #指定主机地址
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://peer1:8001/eureka/,http://localhost:8000/eureka/ #注册到另一个Eureka注册中心
+spring:
+  application:
+    name: eureka-server2

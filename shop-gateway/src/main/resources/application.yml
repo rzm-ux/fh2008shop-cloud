@@ -1,0 +1,35 @@
+
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:8000/eureka/,http://peer1:8001/eureka/,http://pee2:8002/eureka/
+spring:
+  application:
+    name: shopGatew #配置注册中心地址
+server:
+  port: 9000
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    shop-goods-api: #微服务的名字 spring.application.name
+      path: /goods/** #对应访问的路径
+    shop-cate-api: #微服务的名字 spring.application.name
+      path: /cates/** #对应访问的路径
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+fh:
+  shop:
+    checkUrls: /api/meber/findMember,/api/meber/logut,/api/carts/addCartItem,/api/carts/queryCart,/api/carts/deleteCart,/api/carts/deleteCartBatch

@@ -1,0 +1,73 @@
+active:
+  error: http://localhost:63342/shop/shop-portal-front/html/cate/error.html
+  success: http://localhost:63342/shop/shop-portal-front/html/cate/success.html?_ijt=c4g8f5hqdtigiao6vdc2vlteud
+fh:
+  mail:
+    from: 1123426503@qq.com
+logging:
+  level:
+    com:
+      fh:
+        shop:
+          api: debug
+minio:
+  accessKey: minioadmin
+  bucketName: image
+  endpoint: http://192.168.226.130:9090
+  secretKey: minioadmin
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: auto
+      table-prefix: t_
+  mapper-locations: classpath:mappers/*.xml
+server:
+  port: 8006
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 10
+      max-active: 10
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 5
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 1
+      validation-query-timeout: 2000
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.187.1/2525?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+  mail:
+    host: smtp.qq.com
+    password: buqyrnetfueofefh
+    username: 1123426503@qq.com
+  rabbitmq:
+    host: 192.168.226.130
+    password: guest
+    port: 5672
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    username: guest
+    virtual-host: /
+  servlet:
+    multipart:
+      enabled: true
+  application:
+    name: shop-goods-api
+stock:
+  count:
+    limt: 10
+  limt: 10
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://localhost:8000/eureka/,http://peer1:8001/eureka/,http://pee2:8002/eureka/,http://peer1:8001/eureka/,http://pee2:8002/eureka/ #配置注册中心地址
