@@ -45,6 +45,7 @@ public class MemberController {
     })
     @ApiOperation(value = "会员登录")
     public ServerResponse login(String memberName, String password){
+        System.out.println("***********");
         return iMemberService.login(memberName,password);
     }
     @GetMapping("/meber/logut")
